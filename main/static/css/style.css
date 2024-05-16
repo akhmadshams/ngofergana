@@ -1,0 +1,787 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  animation: body 0.4s ease-in-out;
+}
+
+@keyframes body {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+i {
+  cursor: pointer;
+}
+
+
+
+.top {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 100;
+}
+
+.top .top-left {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #1E2761;
+}
+
+.top .top-right {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #1E2761;
+  font-size: 20px;
+}
+
+.navbars {
+  display: none;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: #1E2761;
+}
+
+.lang-menu {
+  width: 100px;
+  text-align: right;
+  font-weight: bold;
+  margin-top: 0px;
+  position: relative;
+  display: flex;
+  z-index: 50;
+}
+
+.lang-menu .selectedImg {
+  width: 25px;
+  background: center/cover url("../images/svg/uzbekistan.png");
+  height: 25px;
+}
+
+.links-media {
+  display: none;
+}
+
+.lang-menu p {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.lang-menu .selected-lang {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-menu ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #f8f8f8;
+  position: absolute;
+  top: 39px;
+  right: 0px;
+  left: 5px;
+  width: 125px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.lang-menu ul li {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.lang-menu ul li a {
+  width: 125px;
+  padding: 5px 15px;
+  display: block;
+  font-size: 12px;
+}
+
+
+.lang-menu ul li:hover {
+  background-color: #f2f2f2;
+}
+
+.lang-menu ul li a:before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+
+.ru:before {
+  background-image: url('../images/svg/russia-flag.png');
+}
+
+.uz_latin:before {
+  background-image: url('../images/svg/uzbekistan.png');
+}
+
+.en::before {
+  background: url("../images/svg/kingdom-flag.png");
+}
+
+
+.lang-menu:hover ul {
+  position: absolute;
+  display: block;
+}
+
+.main {
+  width: 100%;
+  height: 120vh;
+}
+
+.nav {
+  position: absolute;
+  z-index: 10;
+  left: 2.5%;
+  top: 130px;
+  width: 95%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  font-size: 15px;
+  background: rgba(30, 39, 97, 0.44);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.2px);
+  -webkit-backdrop-filter: blur(12.2px);
+}
+
+.nav i:nth-child(1) {
+  display: none;
+}
+
+.nav .links {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav .links a {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+ul li {
+  list-style: none;
+}
+
+.wrapper,
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  overflow: hidden;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slide .image-data {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  width: 100%;
+  z-index: 100;
+  color: white;
+}
+
+.image-data p.text {
+  font-size: 14px;
+  font-weight: 400;
+  width: 600px;
+  margin-left: 120px;
+}
+
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 600;
+  margin-left: 120px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 15px 25px;
+  width: 160px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #fff;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  margin-left: 120px;
+  border: none;
+  border-bottom: 3px solid #1E2761;
+}
+
+a.button:hover {
+  color: #1E2761;
+  border-bottom: 3px solid #fff;
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-button-next {
+  right: 50px;
+}
+
+.swiper-button-prev {
+  left: 50px;
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+}
+
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #1E2761;
+}
+
+.swiper-slide img {
+  filter: blur(4px);
+}
+
+/* news */
+
+.news {
+  padding: 100px 0px;
+  width: 90%;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.news .newsCards {
+  display: flex;
+  padding: 50px 0px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.newsCard {
+  margin: 35px;
+  width: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px 3px rgba(128, 128, 128, 0.5);
+}
+
+.newsCard img {
+  width: 100%;
+}
+
+.newsCard .newsCardText {
+  padding: 10px;
+}
+
+.newsCardText h3 {
+  padding-bottom: 40px;
+}
+
+.newsCardText h5 {
+  padding: 5px;
+}
+
+/* section2  */
+
+.section2 {
+  border-radius: 20px;
+  background: #1E2761;
+  width: 85%;
+  margin: 50px auto;
+  position: relative;
+}
+
+.section2 .section2Wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0px auto;
+  padding: 50px 50px 0px;
+}
+
+.section2 .section2Left {
+  color: white;
+  padding: 10px;
+}
+
+.section2 .section2Left h3 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section2 .chiziq {
+  position: absolute;
+  background: #3DF285;
+  width: 30%;
+  height: 2px;
+  left: 0px;
+}
+
+.section2 .chiziq2 {
+  width: 50%;
+  left: 50%;
+  top: 30px;
+  z-index: 1;
+}
+
+.section2 img {
+  position: relative;
+  z-index: 2;
+}
+
+.section2 .section2Left h4 {
+  margin-top: 40px;
+}
+
+.section2 .section2Left p {
+  color: #3DF285;
+}
+
+.section2 .section2Left .section2LeftIcons {
+  display: flex;
+  margin-top: 20px;
+  font-size: 30px;
+  gap: 30px;
+  justify-content: start;
+}
+
+.section2 .section2Right {
+  margin-top: -160px;
+  display: flex;
+  justify-content: end;
+}
+
+/* maqolalar */
+.maqolalar .maqolalarWrapper {
+  width: 85%;
+  margin: 150px auto;
+  color: white;
+}
+
+.maqolalarWrapper .maqaolalarCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.maqaolalarCards .maqaolalarCard {
+  width: 45%;
+  background: center/cover url("../images/blog.png");
+  height: 400px;
+  margin: 20px;
+  display: flex;
+  align-items: end;
+}
+
+.maqaolalarCard .maqalaText {
+  height: 150px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* contact */
+.contact {
+  background: #1E2761;
+  color: white;
+}
+
+.contact .contactWrapper {
+  display: flex;
+  padding: 30px 15px 30px 20px;
+  justify-content: space-between;
+}
+
+.contactLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contactLeft .contactNumber {
+  display: flex;
+  gap: 40px;
+  font-size: 25px;
+  align-items: center;
+}
+
+.contactNumber a.button {
+  margin-left: 0px;
+  margin-top: 0px;
+  height: 60px;
+  padding: 10px 10px 10px 15px;
+}
+
+.contactLeft .contactIcons {
+  padding-top: 30px;
+  display: flex;
+  gap: 20px;
+  font-size: 25px;
+  align-items: center;
+}
+
+.contact .contactRight {
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  align-items: center;
+  padding: 30px 10px;
+  border-radius: 10px;
+}
+
+.contactRight input {
+  background: #1E2761;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 15px 10px;
+  width: 70%;
+  font-size: 14px;
+  margin: 20px 0px;
+  box-shadow: 0px 0px 20px 3px rgba(128, 128, 128, 0.5);
+}
+
+.contactRight button {
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 17px;
+  color: #1E2761;
+  outline: none;
+  border: none;
+}
+.contactRight input::-webkit-inner-spin-button,
+.contactRight input::-webkit-outer-spin-button {
+    display: none;
+} 
+@media screen and (max-width: 800px) {
+  .nav i:nth-child(1) {
+    display: block;
+  }
+
+  .navbars {
+    display: block;
+  }
+
+  .links-media {
+    transition: 0.4s;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    padding-top: 50px;
+    color: white;
+    z-index: 10000;
+    margin-left: -500%;
+  }
+
+  .links-media .close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 40px;
+    z-index: 500;
+  }
+
+  .section2 {
+    background: #1E2761;
+  }
+
+  .links-media #menu {
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  ul li:hover ul {
+    display: none;
+  }
+
+  #menu i {
+    display: none;
+  }
+
+  #menu a {
+    color: white;
+  }
+
+  .nav {
+    padding: 0px 30px;
+    justify-content: right;
+    top: 120px;
+  }
+
+  .nav .links {
+    display: none;
+  }
+
+  .lang-menu {
+    width: 30px;
+  }
+
+  .lang-menu ul {
+    right: 40px;
+    left: -100px;
+  }
+
+  .selected-lang {
+    width: 100px;
+    display: block;
+  }
+
+  .selected-lang img {
+    width: 100%;
+  }
+
+  .selected-lang p {
+    /* width: 0px; */
+    display: none;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .image-data h2 {
+    font-size: 30px;
+  }
+
+  .top .top-left {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1E2761;
+    font-size: 10px;
+    gap: 5px;
+  }
+
+  .top .top-right {
+    width: 30%;
+    font-size: 11px;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .top .top-right img {
+    width: 16px;
+  }
+
+  .divider,
+  .top-right h3 {
+    display: none;
+  }
+
+  .nav-btn {
+    visibility: hidden;
+  }
+
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+
+  .image-data p.text {
+    font-size: 11px;
+    font-weight: 400;
+    width: 80%;
+    margin-left: 40px;
+  }
+
+  .image-data h2 {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 40px;
+    margin-left: 40px;
+  }
+
+  .image-data a.button {
+    margin-top: -20px;
+    margin-left: 40px;
+  }
+
+  .newsCards .newsCard {
+    width: 90%;
+  }
+
+  .section2 .section2Wrapper {
+    width: 90%;
+    padding: 100px 0px 0px 0px;
+  }
+
+  .section2 .section2Left {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .section2 .section2Left h3 {
+    font-size: 25px;
+  }
+
+  .section2 .section2Left .chiziq {
+    width: 85%;
+    left: calc(15% / 2);
+  }
+
+  .section2 .section2Left .section2LeftIcons {
+    justify-content: center;
+    width: max-content;
+    margin: 20px auto;
+  }
+
+  .section2 .section2Right {
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    justify-content: center;
+    width: 100%;
+    left: 0px;
+    filter: blur(5px);
+  }
+
+  .section2Right .chiziq2 {
+    display: none;
+  }
+
+  .maqaolalarCards .maqaolalarCard {
+    width: 100%;
+  }
+
+  .contact .contactWrapper {
+    display: block;
+    padding: 10px;
+  }
+
+  .contactWrapper .contactLeft,
+  .contactWrapper .contactRight {
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .contactRight input {
+    width: 80%;
+  }
+
+  .contactLeft .contactNumber {
+    flex-wrap: wrap;
+  }
+}
+

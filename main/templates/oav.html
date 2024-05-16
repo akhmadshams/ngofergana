@@ -1,0 +1,383 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% blocktrans %}Farg'ona viloyati - fuqarolik ishlari{% endblocktrans %}</title>
+  <link rel="shortcut icon" href="images/logo2.png" type="image/x-icon" />
+
+  <!-- FLATICON -->
+  <link rel='stylesheet' href="{% static 'https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-rounded/css/uicons-thin-rounded.css' %}">
+
+  <!-- Boxiicons -->
+
+  <script src="{% static 'https://unpkg.com/boxicons@2.1.4/dist/boxicons.js' %}"></script>
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="{% static '/css/swiper-bundle.min.css' %}" />
+
+  <!-- fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/pages.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/stepper.css' %}" />
+    <style>
+    .pagination {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .pagination a {
+      color: black;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+    }
+
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+    }
+
+    .pagination a.active {
+      background-color: #3d4789;
+      color: white;
+      border: 1px solid #3d4789;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="links-media">
+    <i class="close fa fa-close"></i>
+    <ul id="menu">
+      <li>
+        <a href="{% url 'index' %}">{% blocktrans %}BOSH SAHIFA{% endblocktrans %}</a>
+      </li>
+      <li>
+        <a href="{% url 'nnt' %}">{% blocktrans %}NNT{% endblocktrans %}</a>
+      </li>
+      <li>
+        <a href="{% url 'oav' %}">{% blocktrans %}OAV{% endblocktrans %}</a>
+      </li>
+      <li>
+        <a href="{% url 'streets' %}">{% blocktrans %}MAHALLALAR{% endblocktrans %}</a>
+      </li>
+      <li>
+        <a href="{% url 'blog' %}">{% blocktrans %}YANGILIKLAR{% endblocktrans %}</a>
+      </li>
+      <li>
+        <a href="{% url 'docs' %}">{% blocktrans %}NORMATIV HUJJATLAR{% endblocktrans %}</a>
+      </li>
+      <li>
+        <a href="{% url 'grant' %}">{% blocktrans %}GRANTLAR{% endblocktrans %}</a>
+      </li>
+    </ul>
+  </div>
+  <!-- top section -->
+  <div class="top">
+    <div class="top-left">
+      <div class="logo">
+        <img src="{% static 'images/logo2.png' %}" class="logo" alt="" style="width: 70px; height: 80px;">
+      </div>
+      <div>
+        <h3>{% blocktrans %}Farg'ona viloyatidagi fuqarolik{% endblocktrans %}</h3>
+        <h3 class="text-s">{% blocktrans %}JAMIYATI INSTITUTLARI{% endblocktrans %}</h3>
+      </div>
+    </div>
+    <div class="top-right">
+
+      <div class="divider"></div>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-telegram"></i>
+      <div class="divider"></div>
+      <br />
+      <div class="lang-menu">
+        <style>
+        .language-form {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 3px;
+            background-color: #f8f9fa;
+            width: 85px;
+            height: 40px;
+        }
+
+        .language-select {
+            padding: 3px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            cursor: pointer;
+            width: 100%; /* Tanlov maydoni to'liq qo'llanilishi */
+            background-color: #fff; /* Tanlov maydoni fon rangi */
+        }
+
+        .language-select option:checked {
+            background-color: #f0f0f0;
+        }
+        </style>
+
+<form action="{% url 'set_language' %}" method="post" class="language-form">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language" onchange="this.form.submit()" class="language-select">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {% if language.code == 'uz' %}
+                    🇺🇿UZ
+                {% elif language.code == 'ru' %}
+                    🇷🇺RU
+                {% elif language.code == 'en' %}
+                    🇺🇸EN
+                {% endif %}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- menu section -->
+  <nav class="nav">
+    <div class="navbars">
+      <div>
+        <a href="{% url 'index' %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a>
+        >
+        <a href="{% url 'oav' %}">{% blocktrans %}OAV{% endblocktrans %}</a>
+      </div>
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="links">
+      <ul id="menu">
+        <li>
+          <a href="{% url 'index' %}">{% blocktrans %}BOSH SAHIFA{% endblocktrans %}</a>
+        </li>
+        <li>
+          <a href="{% url 'nnt' %}">{% blocktrans %}NNT{% endblocktrans %}</a>
+        </li>
+        <li>
+          <a href="{% url 'oav' %}l">{% blocktrans %}OAV{% endblocktrans %}</a>
+        </li>
+        <li>
+          <a href="{% url 'streets' %}">{% blocktrans %}MAHALLALAR{% endblocktrans %}</a>
+        </li>
+        <li>
+          <a href="{% url 'blog' %}">{% blocktrans %}YANGILIKLAR{% endblocktrans %}</a>
+        </li>
+        <li>
+          <a href="{% url 'docs' %}">{% blocktrans %}NORMATIV HUJJATLAR{% endblocktrans %}</a>
+        </li>
+        <li>
+          <a href="{% url 'grant' %}">{% blocktrans %}GRANTLAR{% endblocktrans %}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section class="stepper-section container">
+    <ol class="stepper-section__ol">
+      <li>
+        <div class="stepper-section__block">
+          <div class="stepper-section__block_wrapper">
+            <div class="stepper-section__block_wrapper__div">
+              <span class="stepper-section__header">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="stepper-section__svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+                </svg>
+
+              </span>
+            </div>
+            <div class="stepper-section__title">
+              <h6 class="stepper-section__heading">
+                {% blocktrans %}TV{% endblocktrans %}</h6>
+              <!-- <p class="text-xs font-normal text-gray-500">Just your
+                personal
+                information</p> -->
+            </div>
+          </div>
+          <div>
+      </li>
+      {% for i in tv %}
+      <li>
+        <div>
+          <a href="{% url 'oav_detail' pk=i.pk %}" class="stepper-section__block_wrapperGray">
+            <div class="stepper-section__block_wrapper__divGray">
+              <span class="stepper-section__span">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
+                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </div>
+            <div class="stepper-section__title">
+              <h6 class="stepper-section__heading">{{ i.name }}</h6>
+              <!-- <p class="text-xs font-normal text-gray-500">Anything
+                you want for your credentials
+              </p> -->
+            </div>
+          </a>
+        </div>
+      </li>
+      {% endfor %}
+
+    </ol>
+    <ol class="stepper-section__ol">
+      <li>
+        <div class="stepper-section__block">
+          <div class="stepper-section__block_wrapper">
+            <div class="stepper-section__block_wrapper__div">
+              <span class="stepper-section__header">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="stepper-section__svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+                </svg>
+
+              </span>
+            </div>
+            <div class="stepper-section__title">
+              <h6 class="stepper-section__heading">
+                {% blocktrans %}Gazeta{% endblocktrans %}</h6>
+              <!-- <p class="text-xs font-normal text-gray-500">Just your
+                personal
+                information</p> -->
+            </div>
+          </div>
+          <div>
+      </li>
+      {% for i in gazeta %}
+      <li>
+        <div>
+          <a href="{% url 'oav_detail' pk=i.pk %}" class="stepper-section__block_wrapperGray">
+            <div class="stepper-section__block_wrapper__divGray">
+              <span class="stepper-section__span">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
+                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </div>
+            <div class="stepper-section__title">
+              <h6 class="stepper-section__heading">{{ i.name }}</h6>
+              <!-- <p class="text-xs font-normal text-gray-500">Anything
+                you want for your credentials
+              </p> -->
+            </div>
+          </a>
+        </div>
+      </li>
+     {% endfor %}
+    </ol>
+    <ol class="stepper-section__ol">
+      <li>
+        <div class="stepper-section__block">
+          <div class="stepper-section__block_wrapper">
+            <div class="stepper-section__block_wrapper__div">
+              <span class="stepper-section__header">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="stepper-section__svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z" />
+                </svg>
+
+              </span>
+            </div>
+            <div class="stepper-section__title">
+              <h6 class="stepper-section__heading">
+                {% blocktrans %}Jurnallar{% endblocktrans %}</h6>
+              <!-- <p class="text-xs font-normal text-gray-500">Just your
+                personal
+                information</p> -->
+            </div>
+          </div>
+          <div>
+      </li>
+      {% for i in jurnal %}
+      <li>
+        <div>
+          <a href="{% url 'oav_detail' pk=i.pk %}" class="stepper-section__block_wrapperGray">
+            <div class="stepper-section__block_wrapper__divGray">
+              <span class="stepper-section__span">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M8 5.99985H7C5.11438 5.99985 4.17157 5.99985 3.58579 6.58564C3 7.17142 3 8.11423 3 9.99985V16.9998C3 18.8855 3 19.8283 3.58579 20.4141C4.17157 20.9998 5.11438 20.9998 7 20.9998H17C18.8856 20.9998 19.8284 20.9998 20.4142 20.4141C21 19.8283 21 18.8855 21 16.9998V9.99985C21 8.11423 21 7.17142 20.4142 6.58564C19.8284 5.99985 18.8856 5.99985 17 5.99985H16M12 17.9998V17.9284C12 17.53 12 17.3308 11.9624 17.1661C11.8342 16.6043 11.3955 16.1657 10.8338 16.0375C10.669 15.9998 10.4698 15.9998 10.0714 15.9998H8C7.53501 15.9998 7.30252 15.9998 7.11177 16.051C6.59413 16.1897 6.18981 16.594 6.05111 17.1116C6 17.3024 6 17.5349 6 17.9998M15 12.9998H18M15 15.9998H18M10.5 12.4998C10.5 13.3283 9.82843 13.9998 9 13.9998C8.17157 13.9998 7.5 13.3283 7.5 12.4998C7.5 11.6714 8.17157 10.9998 9 10.9998C9.82843 10.9998 10.5 11.6714 10.5 12.4998ZM10.25 5.47472V6.24985C10.25 6.95208 10.25 7.3032 10.4185 7.55542C10.4915 7.66461 10.5852 7.75836 10.6944 7.83132C10.9467 7.99985 11.2978 7.99985 12 7.99985C12.7022 7.99985 13.0533 7.99985 13.3056 7.83132C13.4148 7.75836 13.5085 7.66461 13.5815 7.55542C13.75 7.3032 13.75 6.95208 13.75 6.24985V5.47472C13.75 5.16873 13.75 5.01573 13.7069 4.87378C13.6879 4.8111 13.6628 4.75043 13.6319 4.69267C13.562 4.56185 13.4538 4.45366 13.2374 4.23729C12.7409 3.74073 12.4926 3.49246 12.1951 3.43328C12.0663 3.40766 11.9337 3.40766 11.8049 3.43328C11.5074 3.49246 11.2591 3.74073 10.7626 4.23729C10.5462 4.45366 10.438 4.56185 10.3681 4.69267C10.3372 4.75043 10.3121 4.8111 10.2931 4.87378C10.25 5.01573 10.25 5.16873 10.25 5.47472Z"
+                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </div>
+            <div class="stepper-section__title">
+              <h6 class="stepper-section__heading">{{ i.name }}</h6>
+              <!-- <p class="text-xs font-normal text-gray-500">Anything
+                you want for your credentials
+              </p> -->
+            </div>
+          </a>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+      </div>
+
+  <section class="contact">
+    <div class="contactWrapper">
+      <div class="contactLeft">
+        <div class="contactNumber">
+        </div>
+        <div class="contactIcons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-telegram-plane"></i>
+        </div>
+        <h2>{% blocktrans %}Farg'ona viloyatidagi fuqarolik jamiyati institutlari{% endblocktrans %}</h2>
+        <p>{% blocktrans %}© 2024 Barcha huquqlar himoyalangan.{% endblocktrans %}</p>
+      </div>
+      <div class="contactRight">
+        <h2>{% blocktrans %}Savollaringiz bormi?{% endblocktrans %}</h2>
+        <input type="text" placeholder="Ismingiz" id="" />
+        <input type="text" placeholder="Telefon raqam" id="" />
+        <button>{% blocktrans %}Yuborish{% endblocktrans %} <i class="fa-regular fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <script src="{% static '/js/script.js' %}"></script>
+</body>
+
+</html>

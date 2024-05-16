@@ -1,0 +1,791 @@
+/* all */
+
+
+.nav a {
+    color: #23527c !important;
+    font-weight: 600 !important;
+}
+
+.top {
+    z-index: 100;
+    background: #23527c;
+    height: 80px;
+}
+
+.top .top-left,
+.top .top-right {
+    color: white !important;
+}
+
+.search {
+    display: flex;
+    margin: 0px auto;
+    margin-top: 150px;
+    justify-content: center;
+    width: max-content;
+    padding: 50px;
+}
+
+.search input {
+    outline: none;
+    border: 2px solid #23527c;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 10px 0px 0px 10px;
+    border-color: #23527c transparent #23527c #23527c;
+}
+
+.search button {
+    outline: none;
+    border: 2px solid #23527c;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 0px 10px 10px 0px;
+    background: white;
+    border-color: #23527c #23527c #23527c transparent;
+}
+
+/* for blog */
+.blogNews {
+    display: flex;
+    width: 95%;
+    margin: 150px auto;
+    justify-content: space-between;
+}
+
+.blogNews img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.blogNews a {
+    color: blue;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 0px 5px;
+
+}
+
+.blogNews .blogNewsLeft {
+    width: 40%;
+}
+
+.blogNewsLeft img {
+    height: 400px;
+}
+
+.blogNews .blogNewsRight {
+    width: 55%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.blogNewsRight img {
+    height: 200px;
+}
+
+.blogNewsRightCard .blogNewsCardText {
+    padding: 0px 5px;
+    height: 105px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+
+/* blogChild  */
+.blogChild {
+    width: 95%;
+    margin: 130px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blogChild h1 {
+    text-align: center;
+}
+
+.blogChildLeft {
+    width: 65%;
+}
+
+.blogChildLeftCard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.blogChildLeft img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.blogChildLeft p {
+    line-height: 30px;
+    width: 90%;
+}
+
+.blogChildRight {
+    width: 30%;
+}
+
+.blogChildRight h2 {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.blogChildRightCard {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 35px 0px;
+    display: block;
+    color: black;
+    transition: 0.2s;
+}
+
+.blogChildRightCard:hover {
+    border: 1px solid #23527c;
+    color: #23527c;
+}
+
+.blogChildRightCard .time {
+    padding: 10px 0px;
+}
+
+/* for nnt  */
+.nntSearch {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.nnt {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.nntRight {
+    width: 35%;
+}
+
+.nntLists {
+    width: 80%;
+}
+
+.nntLists h2 {
+    padding: 18px 10px;
+    width: 100%;
+    border: 1px solid grey;
+    border-bottom: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.nntLists a {
+    color: black;
+    transition: 0.2s;
+}
+
+.nntLists h2:hover {
+    background: #23527c;
+}
+
+.nntLists a:hover {
+    color: white;
+}
+
+.nntLists a:nth-child(1) h2 {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.nntLists a:nth-last-child(1) h2 {
+    border-radius: 0px 0px 10px 10px;
+    border-bottom: 1px solid grey;
+}
+
+.nntLefts {
+    width: 65%;
+}
+
+.nnt .nntLeft {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px 3px #999;
+    padding: 30px 15px;
+    border-radius: 10px;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    border: 3px solid #999;
+}
+
+.search {
+    padding: 0px;
+    margin: 0px;
+    justify-content: start;
+}
+
+
+
+
+
+
+.nntLeft .nntName {
+    width: 30%;
+    text-align: center;
+}
+
+.nntName img {
+    width: 50%;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px 3px #999;
+    border-radius: 5px;
+}
+
+.nntLeft .nntAbout {
+    width: 65%;
+}
+
+.nntAbout .nntAboutCard {
+    display: flex;
+    gap: 15px;
+}
+
+.nntAboutCard p:nth-child(odd),
+.nntAbout h3 {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    font-weight: 600;
+    padding: 6px 2px;
+    margin: 6px 0px;
+}
+
+.nntAboutCard h5 {
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.nnt .nntYutuq {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* for announce */
+.announceNews {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 95%;
+    margin: 140px auto;
+    flex-wrap: wrap;
+}
+
+.announceNews a {
+    color: black;
+}
+
+.announceNewsCard {
+    width: 30%;
+    height: 400px;
+    margin: 20px 0px;
+}
+
+.announceNewsCard img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.announceNewsCard .announceNewsText {
+    padding: 0px 10px;
+}
+
+.announceNewsCard .announceNewsText:hover {
+    color: blue;
+}
+
+/* for oav  */
+
+.hudud {
+    text-align: center;
+    padding: 50px;
+    margin: 100px auto;
+}
+
+
+.hudud .hududTop {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
+.hududTop button {
+    font-size: 20px;
+    transition: 0.2s;
+    padding: 10px 30px;
+    background: none;
+    border: none;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    color: blue;
+}
+
+.hududTop button:focus {
+    border: 2px solid black;
+    color: black;
+}
+
+.hududCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 50px;
+    width: 90%;
+    margin: 0px auto;
+}
+
+
+.hududCards .hududCard {
+    width: 300px;
+    text-align: left;
+}
+
+.hududCards .hududCard img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.hududCards .hududCardText {
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+}
+
+.hududCards .hududCardText p {
+    font-size: 14px;
+}
+
+
+/* for docs  */
+.docs {
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container {
+    width: 85%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+    font-size: 27px;
+}
+
+
+.docs .docsRight {
+    margin: 20px auto;
+    border-radius: 5px;
+    width: 45%;
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+.docsRight .docsWrapper {
+    padding: 50px 30px;
+}
+
+.docsRight p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.docsRight a {
+    color: #23527c;
+}
+
+.docsRight a:hover {
+    color: dodgerblue;
+}
+
+
+/* for streets  */
+.streets {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.newSearch {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 140px;
+    display: flex;
+    justify-content: end;
+}
+
+.streetsWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.streetsList {
+    width: 30%;
+    position: sticky;
+    height: max-content;
+    top: 40px;
+}
+
+.streetsList li {
+    border: 1px solid #23527c;
+    padding: 5px 30px;
+    list-style-type: decimal;
+    cursor: pointer;
+    border-radius: 15px 0px 0px 15px;
+    margin: 20px 0px;
+    font-size: 25px;
+    box-shadow: 0px 0px 5px 1px #23527c;
+}
+
+.streetsContents {
+    width: 65%;
+}
+
+.streetsContent {
+    margin: 25px 0px;
+    padding: 10px 30px;
+    box-shadow: 0px 0px 15px 2px #23527c;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.3s;
+}
+.streetsContent h2 {
+    padding: 20px 10px 0px 0px ;
+    width: max-content;
+    border-bottom: 1px solid #23527c;
+}
+.streetsContent b {
+    color: #00429c;
+}
+.streetsContent .streetIcons {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    font-size: 23px;
+    padding: 20px 0px 5px;
+    color: gray;
+}
+.streetsContent .streetIcons i{
+    transition: 0.3s;
+}
+.streetsContent:hover {
+    transform: scale(0.95);
+}
+.streetsContent .streetIcons i:hover {
+    color: #00429c;
+}
+.grant {
+    display: flex;
+    padding: 30px;
+}
+.grant .grantLeft {
+    width: 75%;
+}
+.grantLeft .grandCard {
+    width: 100%;
+    margin: 10px auto;
+    border-bottom: 1px solid gray;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    height: 300px;
+    overflow: hidden;
+    align-items: flex-start;
+}
+.grandCard img {
+    height: 100%;
+    width: 45%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px 5px rgba(173, 173, 173, 1) ;
+}
+.grandCard .grandLeftText {
+    width: 55%;
+}
+.grandCard .grandLeftText a {
+    font-size: 18px;
+    color: rgb(44, 130, 216);
+    line-height: 22px;
+    display: block;
+    margin-bottom: 9px;
+}
+.grandLeftText a:hover {
+    color: #23527c;
+}
+.grandLeftText h5 {
+    color: gray;
+    cursor: pointer;
+    width: max-content;
+}
+.grandLeftText h5 i {
+    margin: 10px;
+}
+.grandLeftText p{
+    font-size: 13px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    line-height: 18px;
+}
+
+.grantRight {
+    width: 25%;
+    border-left: 1px solid gray;
+    margin-top: 30px;
+}
+.grantRight h3 {
+    padding: 20px 0px;
+    font-size: 25px;
+    text-align: center;
+}
+.grantRightCard {
+    border-bottom: 1px solid gray;
+    padding: 40px 20px;
+}
+.grantRightCard a {
+    color: dodgerblue;
+    font-size: 14px;
+}
+.grantRightCard a:hover {
+    color: #23527c;
+}
+.grantRightCard h5 {    
+    color: gray;
+    cursor: pointer;
+    padding-top: 10px;
+    width: max-content;
+}
+.grantRight h5 i {
+    margin: 10px 5px;
+}
+.grandLeftText h5:hover ,
+.grantRight h5:hover{
+    color: #23527c;
+}
+
+@media screen and (max-width:1110px) {
+
+    .slide .image-data {
+        top: 60%;
+    }
+
+    .nntName h2 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .nav a {
+        color: white !important;
+    }
+
+    .navbars {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+
+    .navbars a {
+        color: white;
+    }
+
+    .kirish {
+        display: none;
+    }
+
+    .top {
+        padding: 30px 0px;
+        align-items: start;
+    }
+
+    .search {
+        padding: 0px;
+        padding-top: 70px;
+        justify-content: center;
+        margin: 0px auto;
+    }
+
+    .search input {
+        width: 200px;
+    }
+
+
+    .container {
+        display: block;
+        text-align: center;
+    }
+    .container h3 {
+        transform: translateY(20px);
+    }
+
+    .blogNews {
+        display: block;
+        margin: 150px auto;
+    }
+
+    .blogNews .blogNewsLeft,
+    .blogNews .blogNewsRight {
+        width: 95%;
+        margin: 60px auto;
+    }
+
+    .nntNewsCard {
+        width: 100%;
+    }
+
+    .announceNews {
+        margin: 150px auto 50px;
+    }
+
+    .announceNewsCard {
+        width: 75%;
+        margin: 20px auto;
+        min-height: auto;
+        max-width: 400px;
+    }
+
+    .announceNewsCard img {
+        height: 200px;
+    }
+
+    .nntSearch {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nnt {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .nnt>div {
+        width: 95%;
+        margin: 10px auto;
+        padding: 30px 0px;
+    }
+
+    .nntRight .nntLists {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hudud {
+        margin: 70px auto;
+    }
+
+    .hududCards {
+        justify-content: center;
+    }
+
+    .hududCards .hududCard {
+        width: 100%;
+    }
+
+    .hududTop button {
+        padding: 5px 10px;
+        font-size: 16px;
+    }
+
+    .docs .docsRight {
+        width: 100%;
+        margin: 60px auto;
+    }
+
+    .docsRight h2 {
+        font-size: 17px;
+    }
+
+    .streetsWrapper {
+        display: block;
+    }
+
+    .streetsList {
+        width: 90%;
+        position: relative;
+        margin: 0px auto;
+    }
+
+    .streetsList li {
+        border-radius: 5px;
+    }
+
+    .streetsContents {
+        width: 90%;
+        margin: 100px auto;
+    }
+
+    .streetsContent {
+        /* padding: 10px; */
+        height: auto;
+    }
+
+    .blogChild {
+        display: block;
+    }
+
+    .blogChildLeft {
+        width: 100%;
+    }
+
+    .blogChildRight {
+        width: 100%;
+        padding-top: 50px;
+    }
+    .grant {
+        display: block;
+    }
+    .grant .grantLeft {
+        width: 95%;
+        margin: 20px auto;
+    }
+    .grantRight {
+        width: 90%;
+        margin: 20px auto;
+        border-left:none;
+    }
+    .grantLeft .grandCard {
+        display: block;
+        width: 100%;
+        overflow: visible;
+        height: auto;
+        align-items: center;
+    }
+    .grandCard img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .grantLeft .grandLeftText {
+        width: 100%;
+    }
+}
