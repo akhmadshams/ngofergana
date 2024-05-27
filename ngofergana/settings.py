@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$5+tc@%bi5$)7ud*d2hu9r4)xqd80hv+dl$ox_jjthbq^r0c&#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ngofergana.com', 'www.ngofergana.com']
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,12 +128,11 @@ LOCALE_PATHS = BASE_DIR, 'locale'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-# STATIC_ROOT = '/home/ngoferga/ngofergana.com/django/staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = ('/home/ngoferga/ngofergana.com/django/static', )
+STATIC_ROOT = '/home/ngoferga/ngofergana.com/django/staticfiles'
 
 
-STATICFILES_DIRS = [BASE_DIR / 'main/static']
-# STATICFILES_DIRS = ('/home/ngoferga/ngofergana.com/django/static', )
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
