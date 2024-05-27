@@ -162,7 +162,7 @@
         <div class="blogChildRight">
             <h2>{% blocktrans %}Tavsiya Etiladi{% endblocktrans %}</h2>
             {% for i in recent_grant %}
-            <a href="{% url 'blog_detail' pk=i.pk %}" class="blogChildRightCard">
+            <a href="{% url 'grant_detail' pk=i.pk %}" class="blogChildRightCard">
                 <div class="time"> <i class="fa fa-calendar"></i>{{ i.create_at }}</div>
                 <div class="blogAbout">
                     <h3>{{ i.title }}</h3>

@@ -116,10 +116,11 @@ class OAV(models.Model):
     name = models.CharField(max_length=255)
     body = RichTextField()
 
+    def __str__(self):
+        return f"{self.choice_field}: {self.name}"
 
-
-
-
+    class Meta:
+        verbose_name_plural = 'OAV'
 
 class Message(models.Model):
     name = models.CharField(max_length=255)
@@ -134,6 +135,8 @@ class Message(models.Model):
 
 
 
+class Index(models.Model):
+    title = models.CharField(max_length=255)
 
 
 

@@ -208,7 +208,7 @@
         {% for i in street %}
         <div class="streetsContent">
           <h2>{% blocktrans %}Tuman(Shahar) Nomi{% endblocktrans %}: <b> {{ i.city.name }}</b></h2>
-          <h2>{% blocktrans %}Aholisi{% endblocktrans %}: <b> {{ i.population}} </b> kishi</h2>
+          <h2>{% blocktrans %}Aholisi{% endblocktrans %}: <b> {{ i.population}} </b></h2>
           <h2>{% blocktrans %}MFY lar soni{% endblocktrans %}: <b> {{ i.mfy_count }} </b></h2>
           <h2>{% blocktrans %}Hududi{% endblocktrans %}: <b> {{ i.area }} </b></h2>
         </div>
@@ -219,16 +219,21 @@
     </div>
   </div>
 
- <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a href="#">1</a>
-        <a class="active" href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a>
-      </div>
+      <div class="pagination">
+        {% if city.has_previous %}
+            <a href="?q={{ request.GET.q }}&page=1">&laquo;</a>
+        {% endif %}
+        {% for num in city.paginator.page_range %}
+            {% if city.number == num %}
+                <a class="active" href="?q={{ request.GET.q }}&page={{ num }}">{{ num }}</a>
+            {% elif num > city.number|add:-3 and num < city.number|add:3 %}
+                <a href="?q={{ request.GET.q }}&page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if city.has_next %}
+            <a href="?q={{ request.GET.q }}&page={{ city.paginator.num_pages }}">&raquo;</a>
+        {% endif %}
+    </div>
 
   <section class="contact">
     <div class="contactWrapper">
@@ -241,7 +246,10 @@
           <i class="fa-brands fa-youtube"></i>
           <i class="fa-brands fa-telegram-plane"></i>
         </div>
-        <h2>{% blocktrans %}Farg'ona viloyatidagi fuqarolik jamiyati institutlari{% endblocktrans %}</h2>
+        {% for i in title %}
+
+        <h2>{{ i.title }}</h2>
+        {% endfor %}
         <p>{% blocktrans %}© 2024 Barcha huquqlar himoyalangan.{% endblocktrans %}</p>
       </div>
       <div class="contactRight">

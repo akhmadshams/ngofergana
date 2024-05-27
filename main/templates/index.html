@@ -156,18 +156,22 @@
       <div class="slide swiper-slide">
         <img src="{% static 'images/img4.png' %}" alt="" class="image" />
         <div class="image-data">
+          {% for i in title %}
           <h2>
-            {% blocktrans %}Farg'ona viloyati fuqarolik jamiyati institutlari{% endblocktrans %}
+              {{ i.title }}
           </h2>
+          {% endfor %}
           <p class="text">{% blocktrans %}Nodavlat notijorat tashkilot, jismoniy va yoki yuridik shaxslar tomonidan shaxsiy manfaatlarga asoslanmagan holda tashkil etiluvchi tashkilot. Daromad olishni oʻz faoliyatining asosiy maqsadi qilib olmagan, shuningdek, olingan foydani oʻz tarkibidagi kishilar oʻrtasida taqsimlamaydigan oʻzini oʻzi boshqaruvchi muassasadir{% endblocktrans %}</p> <br>
         </div>
       </div>
       <div class="slide swiper-slide">
         <img src="{% static 'images/img4.png' %}" alt="" class="image" />
         <div class="image-data">
+          {% for i in title %}
           <h2>
-            {% blocktrans %}Farg'ona viloyati fuqarolik jamiyati institutlari{% endblocktrans %}
+              {{ i.title }}
           </h2>
+          {% endfor %}
           <p class="text">{% blocktrans %}Nodavlat notijorat tashkilotlar oʻz aʼzolarining yoki taʼsischilarining ijtimoiy maqsadlarini, xususan: tabiiy muhitni yaxshilash, inson huquqlariga rioya qilishni ragʻbatlantirish, kam taʼminlanganlarga moliyaviy yordam berish kabi bir qator ishlarda ularga erkinlik yaratib berishga asoslangan tashkilotdir. Ularning maqsadlari koʻplab masalalarni qamrab oladi. Ular mahalliy nodavlat notijorat tashkilot, muassasalarni moliyalashtirib, loyihalarni amalga oshirishlari mumkin{% endblocktrans %}</p> <br>
 
         </div>
@@ -175,9 +179,11 @@
       <div class="slide swiper-slide">
         <img src="{% static 'images/img4.png' %}" alt="" class="image" />
         <div class="image-data">
+          {% for i in title %}
           <h2>
-            {% blocktrans %}Farg'ona viloyati fuqarolik jamiyati institutlari{% endblocktrans %}
+            {{ i.title }}
           </h2>
+          {% endfor %}
           <p class="text">{% blocktrans %}Nodavlat notijorat tashkilotlar oʻz aʼzolarining yoki taʼsischilarining ijtimoiy maqsadlarini, xususan: tabiiy muhitni yaxshilash, inson huquqlariga rioya qilishni ragʻbatlantirish, kam taʼminlanganlarga moliyaviy yordam berish kabi bir qator ishlarda ularga erkinlik yaratib berishga asoslangan tashkilotdir. Ularning maqsadlari koʻplab masalalarni qamrab oladi. Ular mahalliy nodavlat notijorat tashkilot, muassasalarni moliyalashtirib, loyihalarni amalga oshirishlari mumkin{% endblocktrans %}</p> <br>
         </div>
       </div>
@@ -203,7 +209,9 @@
           <i class="fa-brands fa-youtube"></i>
           <i class="fa-brands fa-telegram-plane"></i>
         </div>
-        <h2>{% blocktrans %}Farg'ona viloyatidagi fuqarolik jamiyati institutlari{% endblocktrans %}</h2>
+        {% for i in title %}
+        <h2>{{ i.title }}</h2>
+        {% endfor %}
         <p>{% blocktrans %}© 2024 Barcha huquqlar himoyalangan.{% endblocktrans %}</p>
       </div>
       <div class="contactRight">

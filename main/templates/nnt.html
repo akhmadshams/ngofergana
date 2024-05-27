@@ -242,17 +242,22 @@
     </div>
   </div>
 
-  <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a href="#">1</a>
-        <a class="active" href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a>
-      </div>
 
+      <div class="pagination">
+        {% if nnt_name.has_previous %}
+            <a href="?q={{ request.GET.q }}&page=1">&laquo;</a>
+        {% endif %}
+        {% for num in nnt_name.paginator.page_range %}
+            {% if nnt_name.number == num %}
+                <a class="active" href="?q={{ request.GET.q }}&page={{ num }}">{{ num }}</a>
+            {% elif num > nnt_name.number|add:-3 and num < nnt_name.number|add:3 %}
+                <a href="?q={{ request.GET.q }}&page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if nnt_name.has_next %}
+            <a href="?q={{ request.GET.q }}&page={{ nnt_name.paginator.num_pages }}">&raquo;</a>
+        {% endif %}
+    </div>
 
 
   <section class="contact">
@@ -267,7 +272,10 @@
           <i class="fa-brands fa-youtube"></i>
           <i class="fa-brands fa-telegram-plane"></i>
         </div>
-        <h2>{% blocktrans %}Farg'ona viloyatidagi fuqarolik jamiyati institutlari{% endblocktrans %}</h2>
+        {% for i in title %}
+
+        <h2>{{ i.title }}</h2>
+        {% endfor %}
         <p>{% blocktrans %}© 2024 Barcha huquqlar himoyalangan.{% endblocktrans %}</p>
       </div>
       <div class="contactRight">

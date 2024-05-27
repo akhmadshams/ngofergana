@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import NTT, NNTName, CityName, Blog, Grant, NormativHujjat, OAV
+from .models import NTT, NNTName, CityName, Blog, Grant, NormativHujjat, OAV, Index
 
 
 @register(NNTName)
@@ -35,3 +35,6 @@ class OAVModelTranslation(TranslationOptions):
     fields = ('name', 'body')
 
 
+@register(Index)
+class IndexTranslation(TranslationOptions):
+    fields = ('title', )

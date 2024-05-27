@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-17 04:02+0500\n"
+"POT-Creation-Date: 2024-05-23 15:10+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,28 +149,28 @@ msgstr "News"
 msgid "Batafsil o'qish"
 msgstr "Read more"
 
-#: main/templates/blog.html:241 main/templates/blogChild.html:189
-#: main/templates/docs.html:240 main/templates/grant.html:241
+#: main/templates/blog.html:248 main/templates/blogChild.html:189
+#: main/templates/docs.html:243 main/templates/grant.html:246
 #: main/templates/grantdetail.html:188 main/templates/index.html:206
-#: main/templates/nnt.html:270 main/templates/oav.html:368
-#: main/templates/oavdetail.html:179 main/templates/streets.html:244
+#: main/templates/nnt.html:275 main/templates/oav.html:373
+#: main/templates/oavdetail.html:179 main/templates/streets.html:249
 #, fuzzy
 msgid "Farg'ona viloyatidagi fuqarolik jamiyati institutlari"
 msgstr "Institutions of civil society in Fergana region"
 
-#: main/templates/blog.html:242 main/templates/blogChild.html:190
-#: main/templates/docs.html:241 main/templates/grant.html:242
+#: main/templates/blog.html:249 main/templates/blogChild.html:190
+#: main/templates/docs.html:244 main/templates/grant.html:247
 #: main/templates/grantdetail.html:189 main/templates/index.html:207
-#: main/templates/nnt.html:271 main/templates/oav.html:369
-#: main/templates/oavdetail.html:180 main/templates/streets.html:245
+#: main/templates/nnt.html:276 main/templates/oav.html:374
+#: main/templates/oavdetail.html:180 main/templates/streets.html:250
 msgid "© 2024 Barcha huquqlar himoyalangan."
 msgstr "© 2024 All rights reserved."
 
-#: main/templates/blog.html:245 main/templates/blogChild.html:193
-#: main/templates/docs.html:244 main/templates/grant.html:245
+#: main/templates/blog.html:252 main/templates/blogChild.html:193
+#: main/templates/docs.html:247 main/templates/grant.html:250
 #: main/templates/grantdetail.html:192 main/templates/index.html:210
-#: main/templates/nnt.html:274 main/templates/oav.html:372
-#: main/templates/oavdetail.html:183 main/templates/streets.html:248
+#: main/templates/nnt.html:279 main/templates/oav.html:377
+#: main/templates/oavdetail.html:183 main/templates/streets.html:253
 msgid "Savollaringiz bormi?"
 msgstr "Do you have any questions?"
 
@@ -178,10 +178,10 @@ msgstr "Do you have any questions?"
 msgid "Tavsiya Etiladi"
 msgstr "Recommended"
 
-#: main/templates/blogChild.html:196 main/templates/docs.html:247
-#: main/templates/grant.html:248 main/templates/index.html:213
-#: main/templates/nnt.html:277 main/templates/oav.html:375
-#: main/templates/streets.html:251
+#: main/templates/blogChild.html:196 main/templates/docs.html:250
+#: main/templates/grant.html:253 main/templates/index.html:213
+#: main/templates/nnt.html:282 main/templates/oav.html:380
+#: main/templates/streets.html:256
 msgid "Yuborish"
 msgstr "Send"
 
@@ -203,7 +203,7 @@ msgstr "All Scholarship Types"
 
 #: main/templates/grant.html:206
 msgid "Ko'p o'qilganlar"
-msgstr "Ko'p o'qilganlar"
+msgstr "Most read"
 
 #: main/templates/grantdetail.html:41 main/templates/oavdetail.html:41
 msgid "GRANT"
