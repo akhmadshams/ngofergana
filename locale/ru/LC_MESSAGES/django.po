@@ -50,7 +50,7 @@ msgstr "ГЛАВНАЯ СТРАНИЦА"
 #: main/templates/oavdetail.html:131 main/templates/streets.html:61
 #: main/templates/streets.html:167
 msgid "NNT"
-msgstr "НПО"
+msgstr "ННO"
 
 #: main/templates/blog.html:64 main/templates/blog.html:168
 #: main/templates/blogChild.html:29 main/templates/blogChild.html:133
@@ -222,7 +222,7 @@ msgstr "Ферганская область - гражданские дела"
 
 #: main/templates/index.html:30
 msgid "NN"
-msgstr "НПО"
+msgstr "ННO"
 
 #: main/templates/index.html:160 main/templates/index.html:169
 #: main/templates/index.html:179
@@ -277,7 +277,7 @@ msgstr "Государственная регистрация:"
 
 #: main/templates/nnt.html:221
 msgid "NNT maqsad va vazifalari:"
-msgstr "Цели и задачи НПО:"
+msgstr "Цели и задачи ННO:"
 
 #: main/templates/nnt.html:227
 msgid "Assosiatsiyaga a'zoligi:"
@@ -285,11 +285,11 @@ msgstr "Членство в ассоциации:"
 
 #: main/templates/nnt.html:229
 msgid "NNT faoliyat yo'nalishi:"
-msgstr "Деятельность НПО:"
+msgstr "Деятельность ННО:"
 
 #: main/templates/nnt.html:236
 msgid "NNT tomonidan amalga oshirilgan loyihalar to'g'risida:"
-msgstr "О проектах, реализованных НПО:"
+msgstr "О проектах, реализованных ННO:"
 
 #: main/templates/oav.html:216
 msgid "TV"
