@@ -1,14 +1,16 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import NTT, NNTName, CityName, Blog, Grant, NormativHujjat, OAV, Index
+from .models import NTT, NNTName, CityName, Blog, Grant, NormativHujjat, OAV, Index, TextModel
 
 
 @register(NNTName)
 class NNTNameModelTranslation(TranslationOptions):
     fields = ('name',)
 
+
 @register(NTT)
 class NNTModelTranslation(TranslationOptions):
     fields = ('name', 'director', 'purpose', 'direction', 'projects', 'address')
+
 
 @register(CityName)
 class CityNameModelTranslation(TranslationOptions):
@@ -37,4 +39,9 @@ class OAVModelTranslation(TranslationOptions):
 
 @register(Index)
 class IndexTranslation(TranslationOptions):
-    fields = ('title', )
+    fields = ('title',)
+
+
+@register(TextModel)
+class TextModelTranslation(TranslationOptions):
+    fields = ('title',)

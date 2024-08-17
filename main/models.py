@@ -37,12 +37,12 @@ class NTT(models.Model):
 class CityName(models.Model):
     name = models.CharField(max_length=255, verbose_name='Shaxar, tuman nomi')
     create_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.name
 
     class Meta:
         verbose_name_plural = 'Tuman shaxar nomlari'
-
 
 
 class Streets(models.Model):
@@ -51,7 +51,6 @@ class Streets(models.Model):
     population = models.CharField(max_length=255, verbose_name='Aholi soni')
     mfy_count = models.CharField(max_length=255, verbose_name='MFY lar soni')
     area = models.CharField(max_length=255, verbose_name='Hududi')
-
 
     def __str__(self):
         return self.city.name
@@ -81,8 +80,6 @@ class Grant(models.Model):
     view_count = models.IntegerField()
 
     def save(self, *args, **kwargs):
-        # create_at ni o'zgartiramiz
-        self.create_at = datetime.strftime(self.create_at, "%Y-%m-%d %I:%M")
         super(Grant, self).save(*args, **kwargs)
 
     def __str__(self):
@@ -90,7 +87,6 @@ class Grant(models.Model):
 
     class Meta:
         verbose_name_plural = 'Grantlar'
-
 
 
 class NormativHujjat(models.Model):
@@ -122,6 +118,7 @@ class OAV(models.Model):
     class Meta:
         verbose_name_plural = 'OAV'
 
+
 class Message(models.Model):
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
@@ -133,16 +130,15 @@ class Message(models.Model):
         verbose_name_plural = 'Xabarlar'
 
 
-
-
 class Index(models.Model):
     title = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.title
 
 
+class TextModel(models.Model):
+    title = models.TextField()
 
-
-
-
-
-
+    def __str__(self):
+        return self.title

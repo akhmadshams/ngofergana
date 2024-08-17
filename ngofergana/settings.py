@@ -1,10 +1,10 @@
+import os
 from pathlib import Path
 
 import django.contrib.staticfiles.finders
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -13,10 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$5+tc@%bi5$)7ud*d2hu9r4)xqd80hv+dl$ox_jjthbq^r0c&#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ngofergana.com', 'www.ngofergana.com']
-
+ALLOWED_HOSTS = ['ngofergana.com', 'www.ngofergana.com', '*']
 
 # Application definition
 
@@ -65,7 +64,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ngofergana.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -75,7 +73,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -95,7 +92,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -107,7 +103,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 from django.utils.translation import gettext_lazy as _
 
 LANGUAGES = [
@@ -116,35 +111,25 @@ LANGUAGES = [
     ('en', _('English'))
 ]
 
-
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 
-
 LOCALE_PATHS = BASE_DIR, 'locale'
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_DIRS = ('/home/ngoferga/ngofergana.com/django/static', )
-STATIC_ROOT = '/home/ngoferga/ngofergana.com/django/staticfiles'
 
-
-
-STATICFILES_FINDERS = [
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-
-]
-
-
+)
 
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = '/home/ngoferga/ngofergana.com/django/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Full',

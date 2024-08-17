@@ -4,69 +4,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% blocktrans %}Farg'ona viloyati - fuqarolik ishlari{% endblocktrans %}</title>
-  <link rel="shortcut icon" href="{% static 'images/logo2.png' %}" type="image/x-icon">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% blocktrans %}Farg'ona viloyati - fuqarolik ishlari{% endblocktrans %}</title>
+    <link rel="shortcut icon" href="{% static 'images/logo2.png' %}" type="image/x-icon">
 
-  <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}"/>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="{% static './css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="{% static './css/style.css' %}"/>
 </head>
 
 <body>
 
-  <div class="links-media">
+<div class="links-media">
     <i class="close fa fa-close"></i>
     <ul id="menu">
-      <li>
-        <a href="{% url 'index' %}">{% blocktrans %}BOSH SAHIFA{% endblocktrans %}</a>
-      </li>
-      <li>
-        <a href="{% url 'nnt' %}">{% blocktrans %}NN{% endblocktrans %}T</a>
+        <li>
+            <a href="{% url 'index' %}">{% blocktrans %}BOSH SAHIFA{% endblocktrans %}</a>
+        </li>
+        <li>
+            <a href="{% url 'nnt' %}">{% blocktrans %}NN{% endblocktrans %}T</a>
 
-      </li>
-      <li>
-        <a href="{% url 'oav' %}">{% blocktrans %}OAV{% endblocktrans %}</a>
-      </li>
-      <li>
-        <a href="{% url 'streets' %}">{% blocktrans %}MAHALLALAR{% endblocktrans %}</a>
-      </li>
-      <li>
-        <a href="{% url 'blog' %}">{% blocktrans %}YANGILIKLAR{% endblocktrans %}</a>
-      </li>
-      <li>
-        <a href="{% url 'docs' %}">{% blocktrans %}NORMATIV HUJJATLAR{% endblocktrans %}</a>
-      </li>
-      <li>
-        <a href="{% url 'grant' %}">{% blocktrans %}GRANTLAR{% endblocktrans %}</a>
-      </li>
+        </li>
+        <li>
+            <a href="{% url 'oav' %}">{% blocktrans %}OAV{% endblocktrans %}</a>
+        </li>
+        <li>
+            <a href="{% url 'streets' %}">{% blocktrans %}MAHALLALAR{% endblocktrans %}</a>
+        </li>
+        <li>
+            <a href="{% url 'blog' %}">{% blocktrans %}YANGILIKLAR{% endblocktrans %}</a>
+        </li>
+        <li>
+            <a href="{% url 'docs' %}">{% blocktrans %}NORMATIV HUJJATLAR{% endblocktrans %}</a>
+        </li>
+        <li>
+            <a href="{% url 'grant' %}">{% blocktrans %}GRANTLAR{% endblocktrans %}</a>
+        </li>
     </ul>
-  </div>
-  <!-- top section -->
-  <div class="top">
+</div>
+<!-- top section -->
+<div class="top">
     <div class="top-left">
-      <div class="logo">
-        <img src="{% static 'images/logo2.png' %}" class="logo" alt="" style="width: 70px; height: 80px;">
-      </div>
-      <div>
-        <h3>{% blocktrans %}Farg'ona viloyatidagi fuqarolik{% endblocktrans %}</h3>
-        <h3 class="text-s">{% blocktrans %}JAMIYATI INSTITUTLARI{% endblocktrans %}</h3>
-      </div>
+        <div class="logo">
+            <img src="{% static 'images/logo2.png' %}" class="logo" alt="" style="width: 70px; height: 80px;">
+        </div>
+        <div>
+            {% if language_code == 'uz' %}
+            <h3>{{ index.title_uz }}</h3>
+            {% elif language_code == 'ru' %}
+            <h3>{{ index.title_ru }}</h3>
+            {% else %}
+            <h3>{{ index.title_en }}</h3>
+            {% endif %}
+        </div>
     </div>
     <div class="top-right">
-      <div class="divider"></div>
-      <i class="fa-brands fa-facebook-f"></i>
-      <i class="fa-brands fa-youtube"></i>
-      <i class="fa-brands fa-telegram"></i>
-      <div class="divider"></div> <br/>
+        <div class="divider"></div>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-telegram"></i>
+        <div class="divider"></div>
+        <br/>
 
-      <div class="lang-menu">
-        <style>
+        <div class="lang-menu">
+            <style>
         .language-form {
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -90,146 +96,119 @@
         .language-select option:checked {
             background-color: #f0f0f0;
         }
-        </style>
-
-<form action="{% url 'set_language' %}" method="post" class="language-form">{% csrf_token %}
-    <input name="next" type="hidden" value="{{ redirect_to }}">
-    <select name="language" onchange="this.form.submit()" class="language-select">
-        {% get_current_language as LANGUAGE_CODE %}
-        {% get_available_languages as LANGUAGES %}
-        {% get_language_info_list for LANGUAGES as languages %}
-        {% for language in languages %}
-            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                {% if language.code == 'uz' %}
-                    🇺🇿UZ
-                {% elif language.code == 'ru' %}
-                    🇷🇺RU
-                {% elif language.code == 'en' %}
-                    🇺🇸EN
-                {% endif %}
-            </option>
-        {% endfor %}
-    </select>
-</form>
 
 
 
-      </div>
+
+            </style>
+
+            <form action="{% url 'set_language' %}" method="post" class="language-form">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" onchange="this.form.submit()" class="language-select">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {% if language.code == 'uz' %}
+                        🇺🇿UZ
+                        {% elif language.code == 'ru' %}
+                        🇷🇺RU
+                        {% elif language.code == 'en' %}
+                        🇺🇸EN
+                        {% endif %}
+                    </option>
+                    {% endfor %}
+                </select>
+            </form>
+
+
+        </div>
     </div>
-  </div>
+</div>
 
 
-
-
-  <nav class="nav">
+<nav class="nav">
     <i class="fa-solid fa-bars"></i>
     <div class="links">
-      <ul id="menu">
-        <li>
-          <a href="{% url 'index' %}">{% blocktrans %}BOSH SAHIFA{% endblocktrans %}</a>
-        </li>
-        <li>
-          <a href="{% url 'nnt' %}">{% blocktrans %}NNT{% endblocktrans %}</a>
-        </li>
-        <li>
-          <a href="{% url 'oav' %}">{% blocktrans %}OAV{% endblocktrans %}</a>
-        </li>
-        <li>
-          <a href="{% url 'streets' %}">{% blocktrans %}MAHALLALAR{% endblocktrans %} </a>
-        </li>
-        <li>
-          <a href="{% url 'blog' %}">{% blocktrans %}YANGILIKLAR{% endblocktrans %}</a>
-        </li>
-        <li>
-          <a href="{% url 'docs' %}">{% blocktrans %}NORMATIV HUJJATLAR{% endblocktrans %}</a>
-        </li>
-        <li>
-          <a href="{% url 'grant' %}">{% blocktrans %}GRANTLAR{% endblocktrans %}</a>
-        </li>
-      </ul>
+        <ul id="menu">
+            <li>
+                <a href="{% url 'index' %}">{% blocktrans %}BOSH SAHIFA{% endblocktrans %}</a>
+            </li>
+            <li>
+                <a href="{% url 'nnt' %}">{% blocktrans %}NNT{% endblocktrans %}</a>
+            </li>
+            <li>
+                <a href="{% url 'oav' %}">{% blocktrans %}OAV{% endblocktrans %}</a>
+            </li>
+            <li>
+                <a href="{% url 'streets' %}">{% blocktrans %}MAHALLALAR{% endblocktrans %} </a>
+            </li>
+            <li>
+                <a href="{% url 'blog' %}">{% blocktrans %}YANGILIKLAR{% endblocktrans %}</a>
+            </li>
+            <li>
+                <a href="{% url 'docs' %}">{% blocktrans %}NORMATIV HUJJATLAR{% endblocktrans %}</a>
+            </li>
+            <li>
+                <a href="{% url 'grant' %}">{% blocktrans %}GRANTLAR{% endblocktrans %}</a>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>
 
-  <section class="main swiper mySwiper">
+<section class="main swiper mySwiper">
     <div class="wrapper swiper-wrapper">
 
-      <div class="slide swiper-slide">
-        <img src="{% static 'images/img4.png' %}" alt="" class="image" />
-        <div class="image-data">
-          {% for i in title %}
-          <h2>
-              {{ i.title }}
-          </h2>
-          {% endfor %}
-          <p class="text">{% blocktrans %}Nodavlat notijorat tashkilot, jismoniy va yoki yuridik shaxslar tomonidan shaxsiy manfaatlarga asoslanmagan holda tashkil etiluvchi tashkilot. Daromad olishni oʻz faoliyatining asosiy maqsadi qilib olmagan, shuningdek, olingan foydani oʻz tarkibidagi kishilar oʻrtasida taqsimlamaydigan oʻzini oʻzi boshqaruvchi muassasadir{% endblocktrans %}</p> <br>
-        </div>
-      </div>
-      <div class="slide swiper-slide">
-        <img src="{% static 'images/img4.png' %}" alt="" class="image" />
-        <div class="image-data">
-          {% for i in title %}
-          <h2>
-              {{ i.title }}
-          </h2>
-          {% endfor %}
-          <p class="text">{% blocktrans %}Nodavlat notijorat tashkilotlar oʻz aʼzolarining yoki taʼsischilarining ijtimoiy maqsadlarini, xususan: tabiiy muhitni yaxshilash, inson huquqlariga rioya qilishni ragʻbatlantirish, kam taʼminlanganlarga moliyaviy yordam berish kabi bir qator ishlarda ularga erkinlik yaratib berishga asoslangan tashkilotdir. Ularning maqsadlari koʻplab masalalarni qamrab oladi. Ular mahalliy nodavlat notijorat tashkilot, muassasalarni moliyalashtirib, loyihalarni amalga oshirishlari mumkin{% endblocktrans %}</p> <br>
+        <div class="slide swiper-slide">
+            <img src="{% static 'images/img4.png' %}" alt="" class="image"/>
+            <div class="image-data">
+                {% for i in data %}
+                <p class="text">{{ i.title }}</p> <br>
+                {% endfor %}
 
+            </div>
         </div>
-      </div>
-      <div class="slide swiper-slide">
-        <img src="{% static 'images/img4.png' %}" alt="" class="image" />
-        <div class="image-data">
-          {% for i in title %}
-          <h2>
-            {{ i.title }}
-          </h2>
-          {% endfor %}
-          <p class="text">{% blocktrans %}Nodavlat notijorat tashkilotlar oʻz aʼzolarining yoki taʼsischilarining ijtimoiy maqsadlarini, xususan: tabiiy muhitni yaxshilash, inson huquqlariga rioya qilishni ragʻbatlantirish, kam taʼminlanganlarga moliyaviy yordam berish kabi bir qator ishlarda ularga erkinlik yaratib berishga asoslangan tashkilotdir. Ularning maqsadlari koʻplab masalalarni qamrab oladi. Ular mahalliy nodavlat notijorat tashkilot, muassasalarni moliyalashtirib, loyihalarni amalga oshirishlari mumkin{% endblocktrans %}</p> <br>
-        </div>
-      </div>
     </div>
 
     <div class="swiper-button-next nav-btn"></div>
     <div class="swiper-button-prev nav-btn"></div>
     <div class="swiper-pagination"></div>
-  </section>
+</section>
 
- 
-  
 
-  
-  <div class="contact">
+<div class="contact">
     <div class="contactWrapper">
-      <div class="contactLeft">
-        <div class="contactNumber">
+        <div class="contactLeft">
+            <div class="contactNumber">
 
+            </div>
+            <div class="contactIcons">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-telegram-plane"></i>
+            </div>
+            {% for i in title %}
+            <h2>{{ i.title }}</h2>
+            {% endfor %}
+            <p>{% blocktrans %}© 2024 Barcha huquqlar himoyalangan.{% endblocktrans %}</p>
         </div>
-        <div class="contactIcons">
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-youtube"></i>
-          <i class="fa-brands fa-telegram-plane"></i>
+        <div class="contactRight">
+            <h4>{% blocktrans %}Savollaringiz bormi?{% endblocktrans %}</h4>
+            <input type="text" placeholder="Ismingiz">
+            <input type="number" placeholder="Telefon raqam:+998">
+            <button>{% blocktrans %}Yuborish{% endblocktrans %} <i class="fa-regular fa-paper-plane"></i></button>
         </div>
-        {% for i in title %}
-        <h2>{{ i.title }}</h2>
-        {% endfor %}
-        <p>{% blocktrans %}© 2024 Barcha huquqlar himoyalangan.{% endblocktrans %}</p>
-      </div>
-      <div class="contactRight">
-        <h4>{% blocktrans %}Savollaringiz bormi?{% endblocktrans %}</h4>
-        <input type="text" placeholder="Ismingiz">
-        <input type="number"  placeholder="Telefon raqam:+998">
-        <button>{% blocktrans %}Yuborish{% endblocktrans %} <i class="fa-regular fa-paper-plane"></i></button>
-      </div>
     </div>
-  </div>
+</div>
 
 
-  <!-- Swiper JS -->
-  <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'js/script.js' %}"></script>
+<!-- Swiper JS -->
+<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
+<!-- Initialize Swiper -->
+<script>
     let swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       loop: true,
@@ -242,7 +221,11 @@
         prevEl: ".swiper-button-prev",
       },
     });
-  </script>
+
+
+
+
+</script>
 </body>
 <!-- Rahmatillo -->
 </html>

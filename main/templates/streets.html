@@ -85,9 +85,14 @@
         <img src="{% static 'images/logo2.png' %}" class="logo" alt="" style="width: 70px; height: 80px;">
       </div>
       <div>
-        <h3>{% blocktrans %}Farg'ona viloyatidagi fuqarolik{% endblocktrans %}</h3>
-        <h3 class="text-s">{% blocktrans %}JAMIYATI INSTITUTLARI{% endblocktrans %}</h3>
-      </div>
+            {% if language_code == 'uz' %}
+            <h3>{{ index.title_uz }}</h3>
+            {% elif language_code == 'ru' %}
+            <h3>{{ index.title_ru }}</h3>
+            {% else %}
+            <h3>{{ index.title_en }}</h3>
+            {% endif %}
+        </div>
     </div>
     <div class="top-right">
 

@@ -124,16 +124,12 @@ msgstr "ГРАНТЫ"
 #: main/templates/grantdetail.html:52 main/templates/index.html:57
 #: main/templates/nnt.html:88 main/templates/oav.html:96
 #: main/templates/oavdetail.html:52 main/templates/streets.html:88
-msgid "Farg'ona viloyatidagi fuqarolik"
-msgstr "Гражданство в Ферганской области"
 
 #: main/templates/blog.html:88 main/templates/blogChild.html:53
 #: main/templates/docs.html:89 main/templates/grant.html:83
 #: main/templates/grantdetail.html:53 main/templates/index.html:58
 #: main/templates/nnt.html:89 main/templates/oav.html:97
 #: main/templates/oavdetail.html:53 main/templates/streets.html:89
-msgid "JAMIYATI INSTITUTLARI"
-msgstr "ОБЩЕСТВЕННЫЕ ИНСТИТУТЫ"
 
 #: main/templates/blog.html:153 main/templates/blogChild.html:118
 #: main/templates/docs.html:154 main/templates/grant.html:148
@@ -1618,8 +1614,6 @@ msgstr ""
 #~ msgid "Farg’ona viloyati fuqarolik ishlari institutlari"
 #~ msgstr "Институты гражданских дел Ферганской области"
 
-#~ msgid "Farg'ona viloyatidagi fuqarolik<"
-#~ msgstr "Гражданство в Ферганской области"
 
 #~ msgid "GRANLAR"
 #~ msgstr "ГРАНТЫ"
