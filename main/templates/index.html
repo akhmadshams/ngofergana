@@ -100,6 +100,9 @@
 
 
 
+
+
+
             </style>
 
             <form action="{% url 'set_language' %}" method="post" class="language-form">{% csrf_token %}
@@ -163,6 +166,16 @@
         <div class="slide swiper-slide">
             <img src="{% static 'images/img4.png' %}" alt="" class="image"/>
             <div class="image-data">
+                <div>
+                    {% if language_code == 'uz' %}
+                    <h2>{{ index.title_uz }}</h2>
+                    {% elif language_code == 'ru' %}
+                    <h2>{{ index.title_ru }}</h2>
+                    {% else %}
+                    <h2>{{ index.title_en }}</h2>
+                    {% endif %}
+                </div>
+
                 {% for i in data %}
                 <p class="text">{{ i.title }}</p> <br>
                 {% endfor %}
@@ -221,6 +234,9 @@
         prevEl: ".swiper-button-prev",
       },
     });
+
+
+
 
 
 
